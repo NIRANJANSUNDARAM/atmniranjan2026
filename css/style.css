@@ -1,0 +1,323 @@
+/* ===== RESET & VARIABLES ===== */
+:root {
+    --primary-color: #374151;      /* Dark Gray */
+    --secondary-color: #111827;    /* Almost Black */
+    --accent-color: #6b7280;       /* Medium Gray */
+    --text-light: #f9fafb;
+    --text-dark: #111827;
+    --bg-light: #f3f4f6;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* ===== PROJECTS FIX ===== */
+.projects-grid .card {
+    height: 100%;
+}
+
+.projects-grid .card-body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+}
+
+.projects-grid i {
+    margin-bottom: 1rem;
+}
+
+.projects-grid h4 {
+    min-height: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.projects-grid p {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer fix */
+.footer {
+    background: #111827;
+    color: white;
+    padding: 1.5rem 0;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+    padding-top: 90px;   /* ADD THIS LINE */
+}
+/* body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+} */
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.08"><path d="M0 0 L100 100 M100 0 L0 100" stroke="black" stroke-width="1"/></svg>');
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 0;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    margin: 0 0.25rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #e5e7eb;
+    color: var(--secondary-color) !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--secondary-color);
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #374151;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-buttons .btn-primary {
+    background: linear-gradient(135deg, #374151, #111827);
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.hero-buttons .btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.hero-buttons .btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.social-link:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.profile-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== STATS SECTION ===== */
+.stats-section {
+    background: rgba(255,255,255,0.9);
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, #aeb4be, #aab3c6);
+    padding: 150px 0 80px;
+    text-align: center;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+/* ===== ABOUT PAGE ===== */
+.about-content {
+    background: white;
+}
+
+.about-text .lead {
+    font-size: 1.3rem;
+    color: #374151;
+}
+
+/* ===== RESUME ===== */
+.resume-section {
+    background: white;
+}
+
+.resume-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== PROJECTS ===== */
+.project-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.project-image {
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+}
+
+.project-overlay {
+    background: rgba(17, 24, 39, 0.9);
+}
+
+/* ===== CONTACT ===== */
+.contact-section {
+    background: white;
+}
+
+.contact-info-card,
+.contact-form-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.form-control {
+    border: 2px solid #e5e7eb;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(55,65,81,0.15);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1.5rem 0;
+}
+.about-profile-img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 60% / 60%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
